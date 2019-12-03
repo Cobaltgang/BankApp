@@ -42,6 +42,23 @@ public class Bank {
                                          
 
             }
+            
+     @Path("/Account")
+        @POST
+        @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+        @Produces(MediaType.TEXT_PLAIN)
+            public Response createAccount(@FormParam("name") String sortcode,
+                                         @FormParam("address") String accno,
+                                         @FormParam("eircode") String customername,
+                                         @FormParam("email") double balance){
+                                         AccountList.add(new Account(sortcode,accno,balance,customername));
+                                         String output = "New Account created for user "+" "+customername;
+                                         return Response.status(200).entity(output).build();
+                                         
+
+            }
+            
+            
  
     public void customers(){
     int clist= CustomerList.size();

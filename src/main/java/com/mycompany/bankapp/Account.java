@@ -15,6 +15,14 @@ public class Account {
     private Double Balance;
     private String CustomerName;
 
+    public Account(String sortcode, String accno, Double balance, String name){
+        SortCode=sortcode;
+        AccNo = accno;
+        Balance = balance;
+        CustomerName= name;
+    }
+    
+    
     public String getSortCode() {
         return SortCode;
     }
