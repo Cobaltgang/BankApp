@@ -1,0 +1,4 @@
+com\mycompany\bankapp\Customer.class
+com\mycompany\bankapp\Account.class
+com\mycompany\bankapp\Transaction.class
+com\mycompany\bankapp\Bank.class
