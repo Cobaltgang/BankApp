@@ -15,13 +15,24 @@ public class Customer {
     private String Eircode;
     private String Email;
     private String PPS;
+    private int ID;
     
-    public Customer(String name, String address, String eircode, String email, String pps){
+    public Customer(int id, String name, String address, String eircode, String email, String pps){
+        
+        id = ID;
         name = Name;
         address=Address;
         eircode=Eircode;
         email=Email;
         pps = PPS;
+    }
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
     }
     
     public String getName() {
