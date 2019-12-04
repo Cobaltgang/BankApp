@@ -36,7 +36,7 @@ public class Bank {
                                          @FormParam("eircode") String eircode,
                                          @FormParam("email") String email,
                                          @FormParam("pps") String pps) {
-                                         CustomerList.add(new Customer(name,address,eircode,email,pps));
+                                         CustomerList.add(new Customer(1,name,address,eircode,email,pps));
                                          String output = "New Account created for user "+" "+name+" and EmailID:"+email;
                                          return Response.status(200).entity(output).build();
                                          
@@ -64,6 +64,5 @@ public class Bank {
     int clist= CustomerList.size();
     System.out.println(clist);
     }
-    
-
+        
 }
