@@ -5,6 +5,8 @@
  */
 package com.mycompany.bankapp.models;
 
+import java.util.List;
+
 /**
  *
  * @author blras
@@ -14,6 +16,16 @@ public class Transaction {
     private String date;
     private String description;
     private double balance;
+    private int tranID;
+    
+     public Transaction(String TrxnType, String data, String description, double balance, int tranID){
+        
+        this.TrxnType = TrxnType;
+        this.date = date;
+        this.description=description;
+        this.balance=balance;
+        this.tranID=tranID;
+    }
 
     public String getTrxnType() {
         return TrxnType;
@@ -46,6 +58,15 @@ public class Transaction {
     public void setBalance(double balance) {
         this.balance = balance;
     }
+
+    public int getTranID() {
+        return tranID;
+    }
+
+    public void setTranID(int tranID) {
+        this.tranID = tranID;
+    }
+    
     
     
 }
