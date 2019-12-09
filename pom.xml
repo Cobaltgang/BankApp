@@ -26,6 +26,16 @@
             <artifactId>jersey-container-servlet</artifactId>
             <version>2.0</version>
         </dependency>
+        <dependency>
+            <groupId>org.glassfish.jersey.media</groupId>
+            <artifactId>jersey-media-json-jackson</artifactId>
+            <version>2.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.jersey.media</groupId>
+            <artifactId>jersey-media-moxy</artifactId>
+            <version>2.0</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -80,16 +90,16 @@
                 <artifactId>jetty-maven-plugin</artifactId>
                 <version>9.2.4.v20141103</version>
                 <configuration>
-                 <httpConnector>
-                <host> 127.0.0.1 </host>
-                <port> 49000 </port>
-                 </httpConnector>
-                 <scanIntervalSeconds>3</scanIntervalSeconds>
-                 <webAppConfig>
-                <!--defaultsDescriptor>src/test/resources/jetty-maven-pluginwebdefault.xml</defaultsDescriptor -->
-                 </webAppConfig>
+                    <httpConnector>
+                        <host>127.0.0.1</host>
+                        <port>49000</port>
+                    </httpConnector>
+                    <scanIntervalSeconds>3</scanIntervalSeconds>
+                    <webAppConfig>
+                        <!--defaultsDescriptor></defaultsDescriptor-->
+                    </webAppConfig>
                 </configuration>
-                </plugin> 
+            </plugin>
         </plugins>
     </build>
 

@@ -19,7 +19,7 @@ public class Account {
     private String CustomerName;
     private String AccType;
     private List<Transaction> Transactions;
-
+    public Account(){}
     public Account(int AccID, String SortCode, String AccNo, Double Balance,String AccType, String CustomerName, List<Transaction> Transactions){
         this.AccID=AccID;
         this.SortCode=SortCode;
