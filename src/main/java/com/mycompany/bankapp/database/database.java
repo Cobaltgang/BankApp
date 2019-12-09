@@ -27,11 +27,11 @@ public static boolean init = true;
    
 
             
-   Transaction t1 = new Transaction("debit", "15/08/2019", "description", 100.00);
-   Transaction t2 = new Transaction("credit", "25/08/2019", "description", 200.00);
-   Transaction t3 = new Transaction("credit", "03/08/2019", "description", 300.00);
-   Transaction t4 = new Transaction("debit", "04/08/2019", "description", 400.00);
-   Transaction t5 = new Transaction("debit", "05/08/2019", "description", 500.00);
+   Transaction t1 = new Transaction(1,"debit", "15/08/2019", "description", 100.00);
+   Transaction t2 = new Transaction(2,"credit", "25/08/2019", "description", 200.00);
+   Transaction t3 = new Transaction(3,"credit", "03/08/2019", "description", 300.00);
+   Transaction t4 = new Transaction(4,"debit", "04/08/2019", "description", 400.00);
+   Transaction t5 = new Transaction(5,"debit", "05/08/2019", "description", 500.00);
                 
     transactionDB.add(t1);
     transactionDB.add(t2);
