@@ -5,6 +5,8 @@
  */
 package com.mycompany.bankapp.models;
 
+import java.util.List;
+
 /**
  *
  * @author Ash
@@ -16,19 +18,29 @@ public class Customer {
     private String Email;
     private String PPS;
     private int ID;
+    private List<Account> Accounts;
     
-    public Customer(int id, String name, String address, String eircode, String email, String pps){
+    public Customer(int ID, String Name, String Address, String Eircode, String Email, String PPS, List<Account> Accounts){
         
-        id = ID;
-        name = Name;
-        address=Address;
-        eircode=Eircode;
-        email=Email;
-        pps = PPS;
+        this.ID = ID;
+        this.Name = Name;
+        this.Address=Address;
+        this.Eircode=Eircode;
+        this.Email=Email;
+        this.PPS = PPS;
+        this.Accounts=Accounts;
     }
 
     public int getID() {
         return ID;
+    }
+
+    public List<Account> getAccounts() {
+        return Accounts;
+    }
+
+    public void setAccounts(List<Account> Accounts) {
+        this.Accounts = Accounts;
     }
 
     public void setID(int ID) {
