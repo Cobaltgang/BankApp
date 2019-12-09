@@ -5,26 +5,58 @@
  */
 package com.mycompany.bankapp.models;
 
+import java.util.List;
+
 /**
  *
  * @author blras
  */
 public class Account {
+    private int AccID;
     private String SortCode;
     private String AccNo;
     private Double Balance;
     private String CustomerName;
+    private String AccType;
+    private List<Transaction> Transactions;
 
-    public Account(String sortcode, String accno, Double balance, String name){
-        SortCode=sortcode;
-        AccNo = accno;
-        Balance = balance;
-        CustomerName= name;
+    public Account(int AccID, String SortCode, String AccNo, Double Balance,String AccType, String CustomerName, List<Transaction> Transactions){
+        this.AccID=AccID;
+        this.SortCode=SortCode;
+        this.AccNo=AccNo;
+        this.Balance=Balance;
+        this.AccType=AccType;
+        this.CustomerName=CustomerName;
+        this.Transactions=Transactions;
+    }
+
+    public List<Transaction> getTransactions() {
+        return Transactions;
+    }
+
+    public void setTransactions(List<Transaction> Transactions) {
+        this.Transactions = Transactions;
     }
     
     
     public String getSortCode() {
         return SortCode;
+    }
+
+    public int getAccID() {
+        return AccID;
+    }
+
+    public void setAccID(int AccID) {
+        this.AccID = AccID;
+    }
+
+    public String getAccType() {
+        return AccType;
+    }
+
+    public void setAccType(String AccType) {
+        this.AccType = AccType;
     }
 
     public void setSortCode(String SortCode) {

@@ -54,7 +54,7 @@ public class Bank {
                                          @FormParam("address") String accno,
                                          @FormParam("eircode") String customername,
                                          @FormParam("email") double balance){
-                                         AccountList.add(new Account(sortcode,accno,balance,customername));
+                                         //AccountList.add(new Account(sortcode,accno,balance,customername));
                                          String output = "New Account created for user "+" "+customername;
                                          return Response.status(200).entity(output).build();
                                          
