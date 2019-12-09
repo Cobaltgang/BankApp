@@ -3,8 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.bankapp;
+package com.mycompany.bankapp.resources;
 
+import com.mycompany.bankapp.services.CustomerService;
+import com.mycompany.bankapp.models.Customer;
 import java.util.List;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
