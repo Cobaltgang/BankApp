@@ -17,7 +17,7 @@ public class Transaction {
     private String description;
     private double balance;
     private int tranID;
-    
+    public Transaction(){}
      public Transaction(int tranID,String TrxnType, String data, String description, double balance){
         
         this.TrxnType = TrxnType;

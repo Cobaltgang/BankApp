@@ -20,7 +20,7 @@ public class Customer {
     private String PPS;
     private int ID;
     private List<Account> Accounts;
-    
+    public Customer(){}
     public Customer(int ID, String Name, String Address, String Eircode, String Email, String PPS, List<Account> Accounts){
         
         this.ID = ID;
