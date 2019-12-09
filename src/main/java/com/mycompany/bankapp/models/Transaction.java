@@ -18,7 +18,7 @@ public class Transaction {
     private double balance;
     private int tranID;
     
-     public Transaction(String TrxnType, String data, String description, double balance, int tranID){
+     public Transaction(int tranID,String TrxnType, String data, String description, double balance){
         
         this.TrxnType = TrxnType;
         this.date = date;
