@@ -7,8 +7,10 @@ package com.mycompany.bankapp.services;
 
 import com.mycompany.bankapp.models.Customer;
 import com.mycompany.bankapp.database.Database;
+import com.mycompany.bankapp.models.Account;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.UUID;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -31,6 +33,17 @@ public class CustomerService {
         return list.get(id-1);
     }
     public Customer createCustomer(Customer c){
+        List<Account> alist = new ArrayList();
+        Account a = new Account();
+        a.setAccID((int) Math.random());
+        a.setAccNo(UUID.randomUUID().toString());
+        a.setAccType("Current");
+        a.setBalance(Double.NaN);
+        a.setCustomerName(c.getName());
+        a.setSortCode(UUID.randomUUID().toString());
+        a.setTransactions(null); 
+        alist.add(a);
+        c.setAccounts(alist);
         c.setID(list.size() +1);
         list.add(c);
         System.out.println("201 - resource created with path: /Customers/"  + String.valueOf(c.getID()));

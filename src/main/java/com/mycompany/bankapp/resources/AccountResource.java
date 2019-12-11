@@ -5,9 +5,14 @@
  */
 package com.mycompany.bankapp.resources;
 import com.mycompany.bankapp.models.Account;
+import com.mycompany.bankapp.models.Customer;
+import com.mycompany.bankapp.services.CustomerService;
 import com.mycompany.bankapp.services.AccountService;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -15,6 +20,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 /**
  *
  * @author Ash
@@ -48,8 +54,11 @@ public class AccountResource {
     */
     @POST
     public Account postAccount(Account a) {
-	return AccountService.createAccount(a);
+      return  AccountService.createAccount(a);
     }
+ 
+
+    
     
     /*
      * Search for a Message 

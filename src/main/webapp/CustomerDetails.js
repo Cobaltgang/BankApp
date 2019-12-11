@@ -7,15 +7,18 @@
 
 $(document).ready(function() {
     $.ajax({
-        url: "http://localhost:49000/bank/Customers/1"
+        url: "http://localhost:49000/bank/Customers"
     }).then(function(data) {
+        var i;
+        for (i = 0; i < data.length; i++) {
+        i= data.length-1;
         var listc= [];
-       $.each(data.accounts, function (index, value) {
+       $.each(data[i].accounts, function (index, value) {
                listc.push(value.accType+", "); 
        })
-       $('.cus-Name').append(data.name);
-       $('.cus-Email').append(data.email);
-       $('.cus-Address').append(data.address);
+       $('.cus-Name').append(data[i].name);
+       $('.cus-Email').append(data[i].email);
+       $('.cus-Address').append(data[i].address);
        $('.cus-Accounts').append(listc);    
-    });
+    }});
 });
