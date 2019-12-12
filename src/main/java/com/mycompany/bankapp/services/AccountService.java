@@ -19,13 +19,29 @@ public class AccountService {
     private List<Account> list = d.getAccounts();
     
     public List<Account> getAllAccounts(){
+        try{
         return list;
+        }
+        catch(Exception e){
+            System.out.println(e);
+            return null;
+        }
+        
     }
 
     public Account getAccount(int id){
+        try{
         return list.get(id-1);
+        }
+        catch(Exception e){
+            System.out.println(e);
+            return null;
+        }
+        
+        
     }
     public Account createAccount(Account a){
+        try{
         TransactionService ts = new TransactionService();
         Transaction t = new Transaction();
         List<Transaction> tlist = new ArrayList();
@@ -40,5 +56,11 @@ public class AccountService {
         list.add(a);
         System.out.println("201 - resource created with path: /Accounts/"  + String.valueOf(a.getAccID()));
         return a;
+        }
+        catch(Exception e){
+            System.out.println(e);
+            return null;
+        }
+
     }
 }

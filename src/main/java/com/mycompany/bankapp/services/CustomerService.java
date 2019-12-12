@@ -27,13 +27,28 @@ public class CustomerService {
     private List<Customer> list = d.getCustomers();
     
     public List<Customer> getAllCustomers(){
+        try{
         return list;
+        }
+        catch(Exception e){
+            System.out.println(e);
+            return null;
+        }
+        
     }
 
     public Customer getCustomer(int id){
+        try{
         return list.get(id-1);
+        }
+        catch(Exception e){
+            System.out.println(e);
+            return null;
+        }
+        
     }
     public Customer createCustomer(Customer c){
+        try{
         List<Account> alist = new ArrayList();
         
         Account a = new Account();
@@ -51,5 +66,11 @@ public class CustomerService {
         list.add(c);
         System.out.println("201 - resource created with path: /Customers/"  + String.valueOf(c.getID()));
         return c;
+        }
+        catch(Exception e){
+            System.out.println(e);
+            return null;
+        }
+        
     }
 }

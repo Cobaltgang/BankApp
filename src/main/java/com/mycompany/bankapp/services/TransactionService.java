@@ -20,13 +20,34 @@ public class TransactionService {
     private List<Account> alist = d.getAccounts();
     
     public List<Transaction> getAllTransactions(){
+        try{
         return tlist;
+        }
+        catch(Exception e){
+            System.out.println(e);
+            return null;
+        }
+        
     }
     public List<Transaction> getAllTransactionsByAccounts(int AccID){
+        try{
         return alist.get(AccID-1).getTransactions();
+        }
+        catch(Exception e){
+            System.out.println(e);
+            return null;
+        }
+        
     }
     public Transaction getTransactionID(int id){
+        try{
         return tlist.get(id-1);
+        }
+        catch(Exception e){
+            System.out.println(e);
+            return null;
+        }
+        
     }
         public void setbalance(Transaction t){
         try{
@@ -56,10 +77,17 @@ public class TransactionService {
         
     }
     public Transaction createTransaction(Transaction t){
+        try{
         setbalance(t);
         t.setTranID(tlist.size() +1);
         tlist.add(t);
         System.out.println("201 - resource created with path: /Transactions/"  + String.valueOf(t.getTranID()));
         return t;
+        }
+        catch(Exception e){
+            System.out.println(e);
+            return null;
+        }
+        
     }
 }

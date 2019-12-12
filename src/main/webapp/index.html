@@ -8,7 +8,7 @@
        
         <script src="CustomerDetails.js"> </script>
         <script src="CustomerIDAccounts.js"> </script>
-        <script src="AllCustomerDetails.js"> </script>
+        <!--<script src="AllCustomerDetails.js"> </script>-->
     </head>
 
     <body>
@@ -20,15 +20,18 @@
             <p class="cus-Accounts">The accounts are:  </p>
         </div>
         
-        <h2> All Accounts for Customer 1</h2>
+        <h2> Balance</h2>
         <div>
-            <p class="cusID-Accounts">The Accounts of customer 1 are:  </p>
+            <p class="cusID-Accounts">The Balance in your current account us:  </p>
         </div>
+        <div>
+<!--            <p class="cusID-Accounts2">The Balance in your current account us:  </p>
+        </div>-->
         
-         <h2> A List of all messages received on the Blog</h2>
+<!--         <h2> A List of all messages received on the Blog</h2>
         <div>
             <p class="cust"> </p>
-        </div>  
+        </div>  -->
 
         <div class="container">
             <div class="table-responsive">
@@ -213,9 +216,7 @@
             type: 'post',
             dataType: 'json',
             contentType: 'application/json',
-            success: function (data) {
-                alert("Created");
-            },
+            success: function (data) {},
             data: JSON.stringify(data)
         });
     }
@@ -232,9 +233,7 @@
             type: 'post',
             dataType: 'json',
             contentType: 'application/json',
-            success: function (data) {
-                alert("Created");
-            },
+            success: function (data) {},
             data: JSON.stringify(data)
         });
     }
