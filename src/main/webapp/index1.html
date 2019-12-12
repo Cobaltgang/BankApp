@@ -1,80 +1,121 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<title>Bank App</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->
-	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="css/util.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-<!--===============================================================================================-->
-</head>
-<body>
+<html>
+    <head>
+        <title>Welcome to bank Application</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"> </script>
+       
+        <script src="CustomerDetails.js"> </script>
+        <script src="CustomerIDAccounts.js"> </script>
+        <!--<script src="AllCustomerDetails.js"> </script>-->
+    </head>
 
+    <body>
+        <h2> Customer 1 Details </h2>
+        <div>
+            <p class="cus-Name">The Customer is:  </p>
+            <p class="cus-Email">The email is:  </p>
+            <p class="cus-Address">The address is:   </p>
+            <p class="cus-Accounts">The accounts are:  </p>
+        </div>
+        
+        <h2> Balance</h2>
+        <div>
+            <p class="cusID-Accounts">The Balance in your current account us:  </p>
+        </div>
+        <div>
+<!--            <p class="cusID-Accounts2">The Balance in your current account us:  </p>
+        </div>-->
+        
+<!--         <h2> A List of all messages received on the Blog</h2>
+        <div>
+            <p class="cust"> </p>
+        </div>  -->
 
-	<div class="container-contact100">
+        <div class="container">
+            <div class="table-responsive">
+                <h2> Table of Messages </h2>
+                <br/>
+                <table class="table table-bordered table-striped table-condensed table-hover" id="employee_table">
+                    <tr>
+                        <th> Name </th>
+                        <th> Email </th>
+                        <th> Address </th>
+                        <th> Accounts </th>
+                       
+                    </tr>
+                </table>
+            </div>
+        </div>
+         
+ <script>    
+   $(document).ready(function() {
+   $.ajax({
+        url: "http://localhost:49000/bank/Customers"
+    }).then(function(data) {                    
+                    var html = '';
+                    var i;
+                    for (i = 0; i < data.length; i++) {
+                       html+='<tr>';
+                       html+='<td>'+data[i].name+'</td>';
+                       html+='<td>'+data[i].email+'</td>';
+                       html+='<td>'+data[i].address+'</td>';
+                       
+                       var listc= [];
+                       $.each(data[i].accounts, function (index, value) {
+                            listc.push(value.accType+" "); 
+                        });
+                        html+='<td>'+listc+'</td>';
+                        html+='</tr>'; 
+                    }
+                    $('#employee_table').append(html);
+                    
+                }); 
+            });  
+   
+  </script>
+   <div class="container-contact100">
 		<div class="wrap-contact100">
-			<form action="bank/App/Customer" method ="post" class="contact100-form validate-form">
+                    <form id ="contactForm"  name="contact-form"  class="contact100-form validate-form">
 				<span class="contact100-form-title">
 					Welcome to the BEST Bank Ever!
 				</span>
 
 				<div class="wrap-input100 validate-input" data-validate="Name is required">
-					<span class="label-input100">Full Name</span>
-					<input class="input100" type="text" name="name" placeholder="Enter your name">
+					<label for="name">Full Name</label>
+					<input class="input100" type="text" name="name" id="name" placeholder="Enter your name">
 					<span class="focus-input100"></span>
 				</div>
 
 				<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-					<span class="label-input100">Email</span>
-					<input class="input100" type="text" name="email" placeholder="Enter your email addess">
+					<label for="email">Email</label>
+					<input class="input100" type="text" name="email" id="email" placeholder="Enter your email addess">
 					<span class="focus-input100"></span>
 				</div>
 
 				<div class="wrap-input100 validate-input" data-validate="Name is required">
-					<span class="label-input100">Address</span>
-					<input class="input100" type="text" name="address" placeholder="Enter your name">
+					<label for="address">Address</label>
+					<input class="input100" type="text" name="address" id="address" placeholder="Enter your name">
 					<span class="focus-input100"></span>
 				</div>
 
 				<div class="wrap-input100 validate-input" data-validate="Name is required">
-					<span class="label-input100">Eircode</span>
-					<input class="input100" type="text" name="eircode" placeholder="Enter your name">
+					<label for="eircode">Eircode</label>
+					<input class="input100" type="text" name="eircode" id="eircode" placeholder="Enter your name">
 					<span class="focus-input100"></span>
 				</div>
 
 				<div class="wrap-input100 validate-input" data-validate="Name is required">
 					<span class="label-input100">PPS Number</span>
-					<input class="input100" type="text" name="pps" placeholder="Enter your name">
+					<input class="input100" type="text" name="PPS" id="PPS" placeholder="Enter your name">
 					<span class="focus-input100"></span>
 				</div>
-
-
-
-				
-
-
 
 				<div class="container-contact100-form-btn">
 					<div class="wrap-contact100-form-btn">
 						<div class="contact100-form-bgbtn"></div>
-						<button class="contact100-form-btn" value="Submit">
+                                                <button type="submit" class="contact100-form-btn" onclick="send()" value="Send">
 							<span>
 								Submit
 								<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
@@ -85,10 +126,54 @@
 			</form>
 		</div>
 	</div>
+  
+  <div class="container-contact100">
+		<div class="wrap-contact100">
+                    <form id ="contactForm" name="contact-form"  class="contact100-form validate-form">
+				<span class="contact100-form-title">
+					Lodge
+				</span>
 
+				<div class="wrap-input100 validate-input" data-validate="Transaction type">
+					<label for="TrxnType">Transaction Type</label>
+					<input class="input100" type="text" name="TrxnType" id="TrxnType" placeholder="Credit or Debit">
+					<span class="focus-input100"></span>
+				</div>
 
+				<div class="wrap-input100 validate-input" data-validate = "Date">
+					<label for="date">date</label>
+					<input class="input100" type="date" name="email" id="email" placeholder="Enter Today's Date">
+					<span class="focus-input100"></span>
+				</div>
 
-	<div id="dropDownSelect1"></div>
+				<div class="wrap-input100 validate-input" data-validate="Description">
+					<label for="description">Description</label>
+					<input class="input100" type="text" name="description" id="description" placeholder="Why Send Money?">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input" data-validate="Balance">
+					<label for="balance">Amount</label>
+					<input class="input100" type="text" name="balance" id="balance" placeholder="balance">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="container-contact100-form-btn">
+					<div class="wrap-contact100-form-btn">
+						<div class="contact100-form-bgbtn"></div>
+                                                <button type="submit" class="contact100-form-btn" onclick="credit()" value="Send">
+							<span>
+								Submit
+								<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+							</span>
+						</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+  
+
 
 <!--===============================================================================================-->
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
@@ -99,6 +184,7 @@
 	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 <!--===============================================================================================-->
 	<script src="vendor/select2/select2.min.js"></script>
+        
 	<script>
 		$(".selection-2").select2({
 			minimumResultsForSearch: 20,
@@ -116,7 +202,49 @@
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+    <script type="text/javascript">
+    function credit() {
+        var data = {
+            trxnType: $("#TrxnType").val(),
+            date:$("#date").val(),
+            description:$("#description").val(),
+            balance:$("#balance").val()
+        };
+
+           $.ajax({
+            url: 'bank/Transactions',
+            type: 'post',
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function (data) {},
+            data: JSON.stringify(data)
+        });
+    }
+    function send() {
+        var data = {
+            name: $("#name").val(),
+            address:$("#address").val(),
+            email:$("#email").val(),
+            eircode:$("#eircode").val(),
+            PPS:$("#PPS").val()
+        };
+           $.ajax({
+            url: 'bank/Customers',
+            type: 'post',
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function (data) {},
+            data: JSON.stringify(data)
+        });
+    }
+
+    
+</script>
+
+ 
+
 <script>
+
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
@@ -124,5 +252,6 @@
   gtag('config', 'UA-23581568-13');
 </script>
 
-</body>
-</html>
+
+ </body>
+ </html>
