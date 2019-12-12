@@ -4,6 +4,9 @@
  * and open the template in the editor.
  */
 package com.mycompany.bankapp.resources;
+import com.mycompany.bankapp.database.Database;
+import com.mycompany.bankapp.models.Account;
+import com.mycompany.bankapp.models.Customer;
 import com.mycompany.bankapp.models.Transaction;
 import com.mycompany.bankapp.services.TransactionService;
 import java.util.List;
@@ -24,19 +27,41 @@ import javax.ws.rs.core.MediaType;
 public class TransactionResource {
     private TransactionService TransactionService = new TransactionService();
     
+
     @GET
     public List<Transaction> getTransactions(@PathParam("AccountID") int id){
-        System.out.println("getAllTransactiosForAccount..."+id);
+        try{
+            System.out.println("getAllTransactiosForAccount..."+id);
         return TransactionService.getAllTransactions();
+        }
+        catch(Exception e){
+            System.out.println(e);
+            return null;
+        }
+        
     }
     @GET
     @Path("/{tranId}")
     public Transaction getTransaction(@PathParam("tranId") int id){
-        System.out.println("getTransactionById..."+id);
+        try{
+            System.out.println("getTransactionById..."+id);
         return TransactionService.getTransactionID(id);
+        }
+        catch(Exception e){
+            System.out.println(e);
+            return null;
+        }
+        
     }
     @POST
     public Transaction createTransaction(Transaction t){
+        try{
         return TransactionService.createTransaction(t);
+        }
+        catch(Exception e){
+            System.out.println(e);
+            return null;
+        }
+        
     }
 }

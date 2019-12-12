@@ -39,17 +39,13 @@ public static boolean init = true;
     transactionDB.add(t4);
     transactionDB.add(t5);
     
-   Account a1 = new Account(15548562, "154613BOF", "1415456315684", 10850.00,"bob", "debit", transactionDB);
-   Account a2 = new Account(25548562, "2234613BOF", "2415456315684", 20850.00,"bob", "debit", transactionDB);
-   Account a3 = new Account(35548562, "3524613BOF", "3415456315684", 30850.00,"bob", "debit", transactionDB);
-   Account a4 = new Account(45548562, "457573BOF", "4415456315684", 40850.00,"bob", "debit", transactionDB);
-   Account a5 = new Account(55548562, "558213BOF", "5415456315684", 50850.00,"bob", "debit", transactionDB);
+   Account a1 = new Account(1, "154613BOF", "1415456315684", 10850.00,"Savings", "debit", transactionDB);
+   Account a2 = new Account(2, "2234613BOF", "2415456315684", 20850.00,"Current", "debit", transactionDB);
+   Account a3 = new Account(3, "3524613BOF", "3415456315684", 30850.00,"Savings", "debit", transactionDB);
    
    accountDB.add(a1);
    accountDB.add(a2);
    accountDB.add(a3);
-   accountDB.add(a4);
-   accountDB.add(a5);
    
     
    Customer c1 = new Customer (1,"james", "nowhere", "a19b69", "nptjames@yagoogle.com", "123435J", accountDB);

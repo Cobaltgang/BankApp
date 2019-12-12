@@ -22,7 +22,7 @@
         
         <h2> All Accounts for Customer 1</h2>
         <div>
-            <p class="cusID-Accounts">The comments posted for  message 1 are:  </p>
+            <p class="cusID-Accounts">The Accounts of customer 1 are:  </p>
         </div>
         
          <h2> A List of all messages received on the Blog</h2>
@@ -72,10 +72,9 @@
             });  
    
   </script>
-  
-  <div class="container-contact100">
+   <div class="container-contact100">
 		<div class="wrap-contact100">
-                    <form id ="contactForm" action="index1.html" name="contact-form"  class="contact100-form validate-form">
+                    <form id ="contactForm"  name="contact-form"  class="contact100-form validate-form">
 				<span class="contact100-form-title">
 					Welcome to the BEST Bank Ever!
 				</span>
@@ -125,10 +124,53 @@
 		</div>
 	</div>
   
-  <pre id="output"></pre>
+  <div class="container-contact100">
+		<div class="wrap-contact100">
+                    <form id ="contactForm" name="contact-form"  class="contact100-form validate-form">
+				<span class="contact100-form-title">
+					Lodge
+				</span>
 
+				<div class="wrap-input100 validate-input" data-validate="Transaction type">
+					<label for="TrxnType">Transaction Type</label>
+					<input class="input100" type="text" name="TrxnType" id="TrxnType" placeholder="Credit or Debit">
+					<span class="focus-input100"></span>
+				</div>
 
-	<div id="dropDownSelect1"></div>
+				<div class="wrap-input100 validate-input" data-validate = "Date">
+					<label for="date">date</label>
+					<input class="input100" type="date" name="email" id="email" placeholder="Enter Today's Date">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input" data-validate="Description">
+					<label for="description">Description</label>
+					<input class="input100" type="text" name="description" id="description" placeholder="Why Send Money?">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input" data-validate="Balance">
+					<label for="balance">Amount</label>
+					<input class="input100" type="text" name="balance" id="balance" placeholder="balance">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="container-contact100-form-btn">
+					<div class="wrap-contact100-form-btn">
+						<div class="contact100-form-bgbtn"></div>
+                                                <button type="submit" class="contact100-form-btn" onclick="credit()" value="Send">
+							<span>
+								Submit
+								<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+							</span>
+						</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+  
+
 
 <!--===============================================================================================-->
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
@@ -158,6 +200,25 @@
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
     <script type="text/javascript">
+    function credit() {
+        var data = {
+            trxnType: $("#TrxnType").val(),
+            date:$("#date").val(),
+            description:$("#description").val(),
+            balance:$("#balance").val()
+        };
+
+           $.ajax({
+            url: 'bank/Transactions',
+            type: 'post',
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function (data) {
+                alert("Created");
+            },
+            data: JSON.stringify(data)
+        });
+    }
     function send() {
         var data = {
             name: $("#name").val(),
@@ -165,8 +226,7 @@
             email:$("#email").val(),
             eircode:$("#eircode").val(),
             PPS:$("#PPS").val()
-        }
-
+        };
            $.ajax({
             url: 'bank/Customers',
             type: 'post',
@@ -178,8 +238,11 @@
             data: JSON.stringify(data)
         });
     }
+
+    
 </script>
 
+ 
 
 <script>
 

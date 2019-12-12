@@ -44,7 +44,14 @@ public class AccountResource {
     @GET
     @Path("/{accountid}")
     public Account getAccount(@PathParam("accountid") int id) {
-        return AccountService.getAccount(id);
+        try{
+            return AccountService.getAccount(id);
+        }
+        catch(Exception e){
+            System.out.println(e);
+            return null;
+        }
+        
     }
 
     
@@ -54,7 +61,14 @@ public class AccountResource {
     */
     @POST
     public Account postAccount(Account a) {
-      return  AccountService.createAccount(a);
+        try{
+            return  AccountService.createAccount(a);
+        }
+        catch(Exception e){
+            System.out.println(e);
+            return null;
+        }
+      
     }
  
 
@@ -70,7 +84,14 @@ public class AccountResource {
     
     @Path("/{accountid}/transactions")
     public AccountResource getAccountResource() {
-	System.out.println("Getting Accounts subresoruces...");
+        try{
+            System.out.println("Getting Accounts subresoruces...");
 	return new AccountResource();
+        }
+        catch(Exception e){
+            System.out.println(e);
+            return null;
+        }
+	
     }
 }

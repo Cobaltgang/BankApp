@@ -50,13 +50,28 @@ public class CustomerResource {
     */    
     @GET
     public List<Customer> getCustomers() {
-        return customerService.getAllCustomers();
+        try{
+            return customerService.getAllCustomers();
+        }
+        catch(Exception e){
+            System.out.println(e);
+            return null;
+        }
+        
     }
     
     @GET
     @Path("/{customerid}")
     public Customer getCustomer(@PathParam("customerid") int id) {
-        return customerService.getCustomer(id);
+        
+         try{
+            return customerService.getCustomer(id);
+        }
+        catch(Exception e){
+            System.out.println(e);
+            return null;
+        }
+         
     }
 
     
@@ -67,7 +82,14 @@ public class CustomerResource {
     @POST
 
     public Customer postCustomer(Customer c){
-        return customerService.createCustomer(c);
+        try{
+            return customerService.createCustomer(c);
+        }
+        catch(Exception e){
+            System.out.println(e);
+            return null;
+        }
+        
     }
 
     
@@ -81,8 +103,15 @@ public class CustomerResource {
     
     @Path("/{customerid}/Accounts")
     public CustomerResource getCustomerResource() {
-	System.out.println("Getting Cstomer subresoruces...");
+        try{
+            System.out.println("Getting Cstomer subresoruces...");
 	return new CustomerResource();
+        }
+        catch(Exception e){
+            System.out.println(e);
+            return null;
+        }
+	
     }
 	
     
