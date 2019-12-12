@@ -1,55 +1,22 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Welcome to bank Application</title>
+        <meta charset="UTF-8" />
+        <title>Welcome to Bank Application</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"> </script>
-       
-        <script src="CustomerDetails.js"> </script>
-        <script src="CustomerIDAccounts.js"> </script>
+        <link rel="stylesheet" href="css/style.css"/>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" />
+
+        <script src="CustomerDetails.js"></script>
+        <script src="CustomerIDAccounts.js"></script>
+        <link rel="stylesheet" href="css/all.min.css" />
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/templatemo-style.css" />
         <!--<script src="AllCustomerDetails.js"> </script>-->
-    </head>
-
-    <body>
-        <h2> Customer 1 Details </h2>
-        <div>
-            <p class="cus-Name">The Customer is:  </p>
-            <p class="cus-Email">The email is:  </p>
-            <p class="cus-Address">The address is:   </p>
-            <p class="cus-Accounts">The accounts are:  </p>
-        </div>
-        
-        <h2> Balance</h2>
-        <div>
-            <p class="cusID-Accounts">The Balance in your current account us:  </p>
-        </div>
-        <div>
-<!--            <p class="cusID-Accounts2">The Balance in your current account us:  </p>
-        </div>-->
-        
-<!--         <h2> A List of all messages received on the Blog</h2>
-        <div>
-            <p class="cust"> </p>
-        </div>  -->
-
-        <div class="container">
-            <div class="table-responsive">
-                <h2> Table of Messages </h2>
-                <br/>
-                <table class="table table-bordered table-striped table-condensed table-hover" id="employee_table">
-                    <tr>
-                        <th> Name </th>
-                        <th> Email </th>
-                        <th> Address </th>
-                        <th> Accounts </th>
-                       
-                    </tr>
-                </table>
-            </div>
-        </div>
-         
- <script>    
+         <script>    
    $(document).ready(function() {
    $.ajax({
         url: "http://localhost:49000/bank/Customers"
@@ -75,183 +42,213 @@
             });  
    
   </script>
-   <div class="container-contact100">
-		<div class="wrap-contact100">
-                    <form id ="contactForm"  name="contact-form"  class="contact100-form validate-form">
-				<span class="contact100-form-title">
-					Welcome to the BEST Bank Ever!
-				</span>
+    </head>
 
-				<div class="wrap-input100 validate-input" data-validate="Name is required">
-					<label for="name">Full Name</label>
-					<input class="input100" type="text" name="name" id="name" placeholder="Enter your name">
-					<span class="focus-input100"></span>
-				</div>
+    <body>
+        <div class="columns-bg">
+            <!-- Logo & Intro -->
+            <section id="logo" class="tm-section-logo">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-12 offset-sm-0 col-md-6 offset-md-6">
+                            <div class="tm-site-name-container">
+                                <div class="tm-site-name-container-inner">
+                                    <h1 class="text-uppercase tm-text-primary tm-site-name">
+                                        Welcome to the BEST Bank Ever!
+                                    </h1>
+                                    <p class="tm-text-primary tm-site-description">
+                                        For All your Banking Needs
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-				<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-					<label for="email">Email</label>
-					<input class="input100" type="text" name="email" id="email" placeholder="Enter your email addess">
-					<span class="focus-input100"></span>
-				</div>
+            <!-- Section 1 -->
+            <section id="section_1" class="tm-p-2-section-1 tm-sm-bg-blue">
+                <div class="container-fluid">
+                    <div class="row flex-column-reverse flex-lg-row">
+                        <div class="col-md-12 col-lg-6 tm-text-left-container">
+                            <div class="tm-section-text-container-3 tm-bg-white-alpha h-100">
+                                <h2 class="tm-section-title-mb"> Customer 1 Details</h2>
+                                <hr class="tm-hr-mb" />
 
-				<div class="wrap-input100 validate-input" data-validate="Name is required">
-					<label for="address">Address</label>
-					<input class="input100" type="text" name="address" id="address" placeholder="Enter your name">
-					<span class="focus-input100"></span>
-				</div>
+                                <p class="cus-Name">The Customer is:  </p>
+                                <p class="cus-Email">The email is:  </p>
+                                <p class="cus-Address">The address is:   </p>
+                                <p class="cus-Accounts">The accounts are:  </p>
+                                <h2> Balance</h2>
+                                <div>
+                                    <p class="cusID-Accounts">The Balance in your current account is:  </p>
+                                </div>
 
-				<div class="wrap-input100 validate-input" data-validate="Name is required">
-					<label for="eircode">Eircode</label>
-					<input class="input100" type="text" name="eircode" id="eircode" placeholder="Enter your name">
-					<span class="focus-input100"></span>
-				</div>
+                            </div>
+                        </div>
+                        <div
+                            class="col-md-12 col-lg-6 tm-section-image-container tm-img-right-container"
+                            >
+                            <div class="col-md-6">
+                                <div class="tm-section-text-container">
+                                    <i class="tm-text-Black">
 
-				<div class="wrap-input100 validate-input" data-validate="Name is required">
-					<span class="label-input100">PPS Number</span>
-					<input class="input100" type="text" name="PPS" id="PPS" placeholder="Enter your name">
-					<span class="focus-input100"></span>
-				</div>
+                                        <label for="name">Full Name</label>
+                                        <input class="input100" type="text" name="name" id="name" placeholder="Enter your name">
+                                        <span class="focus-input100"></span>
+                                        <label for="email">Email</label>
+                                        <input class="input100" type="text" name="email" id="email" placeholder="Enter your email addess">
+                                        <label for="email">Address</label>
+                                        <input class="input100" type="text" name="address" id="address" placeholder="Enter your address">
+                                        <label for="email">Eircode</label>
+                                        <input class="input100" type="text" name="eircode" id="eircode" placeholder="Enter your EirCode">
+                                        <label for="email">PPS</label>
+                                        <input class="input100" type="text" name="PPS" id="PPS" placeholder="Enter your PPS Number">
 
-				<div class="container-contact100-form-btn">
-					<div class="wrap-contact100-form-btn">
-						<div class="contact100-form-bgbtn"></div>
-                                                <button type="submit" class="contact100-form-btn" onclick="send()" value="Send">
-							<span>
-								Submit
-								<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
-							</span>
-						</button>
-					</div>
-				</div>
-			</form>
-		</div>
-	</div>
-  
-  <div class="container-contact100">
-		<div class="wrap-contact100">
-                    <form id ="contactForm" name="contact-form"  class="contact100-form validate-form">
-				<span class="contact100-form-title">
-					Lodge
-				</span>
+                                    </i>
+                                    <button type="submit" class="btn tm-btn-submit rounded-0" onclick="send()" value="Send">
+                                        <span>
+                                            Submit
+                                            <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+                                        </span>
+                                    </button>
+                                </div>
 
-				<div class="wrap-input100 validate-input" data-validate="Transaction type">
-					<label for="TrxnType">Transaction Type</label>
-					<input class="input100" type="text" name="TrxnType" id="TrxnType" placeholder="Credit or Debit">
-					<span class="focus-input100"></span>
-				</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-				<div class="wrap-input100 validate-input" data-validate = "Date">
-					<label for="date">date</label>
-					<input class="input100" type="date" name="email" id="email" placeholder="Enter Today's Date">
-					<span class="focus-input100"></span>
-				</div>
+            <!-- Section 2 -->
+            <section id="section_2" class="tm-section-4">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div
+                            class="col-md-12 col-lg-6 tm-section-image-container tm-img-left-container">
 
-				<div class="wrap-input100 validate-input" data-validate="Description">
-					<label for="description">Description</label>
-					<input class="input100" type="text" name="description" id="description" placeholder="Why Send Money?">
-					<span class="focus-input100"></span>
-				</div>
+                        </div>
+                        <div class="col-md-12 col-lg-6 pl-lg-0">
+                            <div class="tm-section-text-container-3 tm-bg-gray h-100">
+                                <h2 class="tm-section-title-mb">Lodgement</h2>
+                                <hr class="tm-hr-mb" />
+                                <p class="tm-p-mb">
+                                <form>
 
-				<div class="wrap-input100 validate-input" data-validate="Balance">
-					<label for="balance">Amount</label>
-					<input class="input100" type="text" name="balance" id="balance" placeholder="balance">
-					<span class="focus-input100"></span>
-				</div>
+                                    <div class="wrap-input100 validate-input" data-validate="Transaction type">
+                                        <label for="TrxnType">Transaction Type</label>
+                                        <input class="input100" type="text" name="TrxnType" id="TrxnType" placeholder="Credit or Debit">
+                                        <span class="focus-input100"></span>
+                                    </div>
 
-				<div class="container-contact100-form-btn">
-					<div class="wrap-contact100-form-btn">
-						<div class="contact100-form-bgbtn"></div>
-                                                <button type="submit" class="contact100-form-btn" onclick="credit()" value="Send">
-							<span>
-								Submit
-								<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
-							</span>
-						</button>
-					</div>
-				</div>
-			</form>
-		</div>
-	</div>
-  
+                                    <div class="wrap-input100 validate-input" data-validate = "Date">
+                                        <label for="date">date</label>
+                                        <input class="input100" type="date" name="email" id="email" placeholder="Enter Today's Date">
+                                        <span class="focus-input100"></span>
+                                    </div>
 
+                                    <div class="wrap-input100 validate-input" data-validate="Description">
+                                        <label for="description">Description</label>
+                                        <input class="input100" type="text" name="description" id="description" placeholder="Reason for Lodging?">
+                                        <span class="focus-input100"></span>
+                                    </div>
 
-<!--===============================================================================================-->
-	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/animsition/js/animsition.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/bootstrap/js/popper.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/select2/select2.min.js"></script>
-        
-	<script>
-		$(".selection-2").select2({
-			minimumResultsForSearch: 20,
-			dropdownParent: $('#dropDownSelect1')
-		});
-	</script>
-<!--======================================changes=========================================================-->
-	<script src="vendor/daterangepicker/moment.min.js"></script>
-	<script src="vendor/daterangepicker/daterangepicker.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/countdowntime/countdowntime.js"></script>
-<!--======================================changes=========================================================-->
-	<script src="js/main.js"></script>
-       
+                                    <div class="wrap-input100 validate-input" data-validate="Balance">
+                                        <label for="balance">Amount</label>
+                                        <input class="input100" type="text" name="balance" id="balance" placeholder="Lodgement Amount">
+                                        <span class="focus-input100"></span>
+                                    </div>
 
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
-    <script type="text/javascript">
-    function credit() {
-        var data = {
-            trxnType: $("#TrxnType").val(),
-            date:$("#date").val(),
-            description:$("#description").val(),
-            balance:$("#balance").val()
-        };
+                                    <div class="container-contact100-form-btn">
+                                        <div class="wrap-contact100-form-btn">
+                                            <div class="contact100-form-bgbtn"></div>
+                                            <button type="submit" class="btn tm-btn-submit rounded-0" onclick="credit()" value="Send">
+                                                <span>
+                                                    Submit
+                                                    <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
 
-           $.ajax({
-            url: 'bank/Transactions',
-            type: 'post',
-            dataType: 'json',
-            contentType: 'application/json',
-            success: function (data) {},
-            data: JSON.stringify(data)
-        });
-    }
-    function send() {
-        var data = {
-            name: $("#name").val(),
-            address:$("#address").val(),
-            email:$("#email").val(),
-            eircode:$("#eircode").val(),
-            PPS:$("#PPS").val()
-        };
-           $.ajax({
-            url: 'bank/Customers',
-            type: 'post',
-            dataType: 'json',
-            contentType: 'application/json',
-            success: function (data) {},
-            data: JSON.stringify(data)
-        });
-    }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-    
-</script>
+            <section id="section_3" class="tm-section-4">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="tm-section-text-container-7 tm-bg-dark-gray">
+                                <h2 class="tm-section-title-mb tm-text-primary-bright">
+                                    Table of Messages 
+                                </h2>
+                                <hr
+                                    class="tm-hr-mb tm-hr-primary-bright tm-section-underline ml-0"
+                                    />
 
- 
+                                <table class="table table-bordered table-striped table-condensed table-hover" id="employee_table">
+                                    <tr>
+                                        <th> Name </th>
+                                        <th> Email </th>
+                                        <th> Address </th>
+                                        <th> Accounts </th>
 
-<script>
+                                    </tr>
+                                </table>
 
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-23581568-13');
-</script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
 
- </body>
- </html>
+
+
+
+            <script type="text/javascript">
+                function credit() {
+                    var data = {
+                        trxnType: $("#TrxnType").val(),
+                        date: $("#date").val(),
+                        description: $("#description").val(),
+                        balance: $("#balance").val()
+                    };
+
+                    $.ajax({
+                        url: 'bank/Transactions',
+                        type: 'post',
+                        dataType: 'json',
+                        contentType: 'application/json',
+                        success: function (data) {},
+                        data: JSON.stringify(data)
+                    });
+                }
+                function send() {
+                    var data = {
+                        name: $("#name").val(),
+                        address: $("#address").val(),
+                        email: $("#email").val(),
+                        eircode: $("#eircode").val(),
+                        PPS: $("#PPS").val()
+                    };
+                    $.ajax({
+                        url: 'bank/Customers',
+                        type: 'post',
+                        dataType: 'json',
+                        contentType: 'application/json',
+                        success: function (data) {},
+                        data: JSON.stringify(data)
+                    });
+                }
+
+
+            </script>
+        </div>
+        <!-- /.columns-bg -->
+    </body>
+</html>
